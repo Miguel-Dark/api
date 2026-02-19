@@ -19,6 +19,7 @@ public class Paciente {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    private Boolean activo;
     private String nombre;
     private String email;
     private String telefono;
@@ -49,5 +50,9 @@ public class Paciente {
         if (datos.direccion() != null) {
             this.direccion.actualizarDireccion(datos.direccion());
         }
+    }
+
+    public void eliminar() {
+        this.activo = false;
     }
 }
