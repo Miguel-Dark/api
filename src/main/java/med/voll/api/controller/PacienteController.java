@@ -38,6 +38,6 @@ public class PacienteController {
     @DeleteMapping("/{id}")
     public void eliminar(@PathVariable Long id) {
         var paciente = repository.getReferenceById(id);
-        paciente.eliminar();
+        paciente.desactivar();
     }
 }
