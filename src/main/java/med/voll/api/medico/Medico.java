@@ -53,7 +53,7 @@ public class Medico {
         }
     }
 
-    public void eliminar() {
+    public void desactivar() {
         this.activo = false;
     }
 }
