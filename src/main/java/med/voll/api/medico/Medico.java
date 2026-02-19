@@ -41,7 +41,7 @@ public class Medico {
         this.direccion = new Direccion(datos.direccion());
     }
 
-    public void actualizarInformaciones(@Valid DatosActualizacionMedico datos) {
+    public void actualizarInformacion(@Valid DatosActualizacionMedico datos) {
         if (datos.nombre() != null) {
             this.nombre = datos.nombre();
         }
