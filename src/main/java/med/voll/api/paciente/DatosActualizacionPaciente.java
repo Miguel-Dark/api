@@ -6,7 +6,6 @@ import med.voll.api.direccion.DatosDireccion;
 public record DatosActualizacionPaciente(
         @NotNull Long id,
         String nombre,
-        String email,
         String telefono,
         DatosDireccion direccion
 ) {
