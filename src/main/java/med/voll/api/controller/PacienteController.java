@@ -55,6 +55,7 @@ public class PacienteController {
     }
 
     @GetMapping("/{id}")
+    @Transactional
     public ResponseEntity detallar(@PathVariable Long id) {
         var paciente = repository.getReferenceById(id);
 
