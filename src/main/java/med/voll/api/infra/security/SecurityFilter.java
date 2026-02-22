@@ -4,6 +4,7 @@ import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 
@@ -11,17 +12,22 @@ import java.io.IOException;
 
 @Component
 public class SecurityFilter extends OncePerRequestFilter {
+
+    @Autowired
+    private TokenService tokenService;
+
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
         var tokenJWT = recuperarToken(request);
-        System.out.println(tokenJWT);
+        var subject = tokenService.getSubject(tokenJWT);
 
+        // ¡Importante! Continuar la cadena de filtros
         filterChain.doFilter(request, response);
     }
 
     private String recuperarToken(HttpServletRequest request) {
-        var authorizationHeader = request.getHeader("Authorization");
-        if (authorizationHeader == null) {
+        var authorizationHeader = request.getHeader("Authorization");// 1. Buscamos el header específico
+        if (authorizationHeader == null) {// 2. Validamos si el cliente lo envió
             throw new RuntimeException("Token JWT no enviado en el encabezado de Authorization");
         }
         return authorizationHeader.replace("Bearer", "");
