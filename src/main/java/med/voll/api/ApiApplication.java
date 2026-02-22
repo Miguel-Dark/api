@@ -8,6 +8,8 @@ public class ApiApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(ApiApplication.class, args);
+
+        System.out.println("HASH GENERADA: " + new org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder().encode("654321"));
 	}
 
 }
