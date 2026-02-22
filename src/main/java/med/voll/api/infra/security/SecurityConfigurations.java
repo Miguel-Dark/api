@@ -20,11 +20,10 @@ public class SecurityConfigurations {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         return http.csrf(csrf -> csrf.disable())
                 .sessionManagement(sm -> sm.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-                .authorizeHttpRequests(auth -> auth
-                        .requestMatchers(HttpMethod.POST, "/login").permitAll() // Puerta abierta para loguearse
-                        .requestMatchers("/error").permitAll() // Para poder ver los mensajes de error
-                        .anyRequest().authenticated()
-                )
+                .authorizeHttpRequests(req -> {
+                    req.requestMatchers(HttpMethod.POST,"/login").permitAll();
+                    req.anyRequest().authenticated();
+                })
                 .build();
     }
 
