@@ -15,6 +15,8 @@ import java.time.ZoneOffset;
 @Service
 public class TokenService {
 
+    private static final String ISSUER = "API Voll.med";
+
     @Value("${api.security.token.secret}")
     private String secret;
 
@@ -22,7 +24,7 @@ public class TokenService {
         try {
             var algoritmo = Algorithm.HMAC256(secret);
             return JWT.create()
-                    .withIssuer("API Voll.med")
+                    .withIssuer(ISSUER)
                     .withSubject(usuario.getLogin())
                     .withExpiresAt(fechaExpiracion())
                     .sign(algoritmo);
@@ -39,13 +41,13 @@ public class TokenService {
         try {
             var algoritmo = Algorithm.HMAC256(secret);
             return JWT.require(algoritmo)
-                    .withIssuer("API Voll.med")
+                    .withIssuer(ISSUER)
                     .build()
                     .verify(tokenJWT)
                     .getSubject();
 
         } catch (JWTVerificationException exception){
-            throw new RuntimeException("Token JWT invalido o expirado!");
+            throw new RuntimeException("Token JWT invalido o expirado: "+tokenJWT);
         }
     }
 }
