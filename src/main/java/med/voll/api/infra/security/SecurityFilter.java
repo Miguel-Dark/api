@@ -31,6 +31,7 @@ public class SecurityFilter extends OncePerRequestFilter {
 
 
             var authentication = new UsernamePasswordAuthenticationToken(usuario, null, usuario.getAuthorities());
+
             SecurityContextHolder.getContext().setAuthentication(authentication);
         }
 
@@ -39,9 +40,10 @@ public class SecurityFilter extends OncePerRequestFilter {
     }
 
     private String recuperarToken(HttpServletRequest request) {
-        var authorizationHeader = request.getHeader("Authorization");// 1. Buscamos el header específico
-        if (authorizationHeader != null) {
-            return authorizationHeader.replace("Bearer", "");
+        var authorizationHeader = request.getHeader("Authorization");
+        if (authorizationHeader != null && authorizationHeader.startsWith("Bearer ")) {
+            // .trim() elimina cualquier espacio traicionero al final o al inicio
+            return authorizationHeader.substring(7).trim();
         }
         return null;
     }
