@@ -49,4 +49,5 @@ public class ReservaDeConsultas {
 
         return medicoRepository.elegirMedicoAleatorioDisponibleEnLaFecha(datos.especialidad(), datos.fecha());
     }
+
 }
