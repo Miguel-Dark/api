@@ -13,7 +13,7 @@ public class ValidadorPacienteActivo implements ValidadorDeConsultas{
     private PacienteRepository repository;
 
     public void validar(DatosReservaConsulta datos){
-        var pacienteEstaActivo = repository.existsByIdAndActivoTrue(datos.idPaciente());
+        var pacienteEstaActivo = repository.findActivoById(datos.idPaciente());
         if(!pacienteEstaActivo){
             throw new ValidacionException("Consulta no puede ser reservada con paciente excluido");
         }
