@@ -19,8 +19,9 @@ public interface MedicoRepository extends JpaRepository<Medico, Long> {
              AND m.especialidad = :especialidad
              AND m.id NOT IN(
                 SELECT c.medico.id FROM  Consulta c WHERE c.fecha = :fecha
+             AND c.motivoCancelamiento IS NULL
              )
-             ORDER BY RANDOM()
+             ORDER BY function('random')
              LIMIT 1
              """)
     Medico elegirMedicoAleatorioDisponibleEnLaFecha(@Param("especialidad") Especialidad especialidad, @Param("fecha") @NotNull @Future LocalDateTime fecha);

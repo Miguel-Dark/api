@@ -1,14 +1,17 @@
-package med.voll.api.domain.consulta.validaciones;
+package med.voll.api.domain.consulta.validaciones.reserva;
 
 import med.voll.api.domain.ValidacionException;
 import med.voll.api.domain.consulta.ConsultaRepository;
 import med.voll.api.domain.consulta.DatosCancelamientoConsulta;
+import med.voll.api.domain.consulta.validaciones.cancelamiento.ValidadorCancelamientoDeConsulta;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.time.Duration;
 import java.time.LocalDateTime;
 
-public class ValidadorHorarioConAnticipacion implements ValidadorCancelamientoDeConsulta{
+@Component("ValidadorConsultaConAnticipacionCancelamiento")
+public class ValidadorHorarioConAnticipacion implements ValidadorCancelamientoDeConsulta {
 
     @Autowired
     private ConsultaRepository repository;

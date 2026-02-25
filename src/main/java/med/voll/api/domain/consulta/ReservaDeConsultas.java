@@ -2,8 +2,8 @@ package med.voll.api.domain.consulta;
 
 import jakarta.validation.Valid;
 import med.voll.api.domain.ValidacionException;
-import med.voll.api.domain.consulta.validaciones.ValidadorCancelamientoDeConsulta;
-import med.voll.api.domain.consulta.validaciones.ValidadorDeConsultas;
+import med.voll.api.domain.consulta.validaciones.cancelamiento.ValidadorCancelamientoDeConsulta;
+import med.voll.api.domain.consulta.validaciones.reserva.ValidadorReservaDeConsulta;
 import med.voll.api.domain.medico.Medico;
 import med.voll.api.domain.medico.MedicoRepository;
 import med.voll.api.domain.paciente.PacienteRepository;
@@ -28,7 +28,7 @@ public class ReservaDeConsultas {
     private List<ValidadorCancelamientoDeConsulta> validadoresCancelamiento;
 
     @Autowired
-    private List<ValidadorDeConsultas> validadores;
+    private List<ValidadorReservaDeConsulta> validadores;
 
 
 
