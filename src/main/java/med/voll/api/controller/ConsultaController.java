@@ -2,7 +2,6 @@ package med.voll.api.controller;
 
 import jakarta.validation.Valid;
 import med.voll.api.domain.consulta.DatosCancelamientoConsulta;
-import med.voll.api.domain.consulta.DatosDetalleConsulta;
 import med.voll.api.domain.consulta.DatosReservaConsulta;
 import med.voll.api.domain.consulta.ReservaDeConsultas;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,12 +20,9 @@ public class ConsultaController {
     @Transactional
     public ResponseEntity reservar(@RequestBody @Valid DatosReservaConsulta datos) {
 
-        var detalle = service.reservar(datos);
+        var detalleConsulta = service.reservar(datos);
 
-        return ResponseEntity.ok(new DatosDetalleConsulta(detalle.id(),
-                detalle.idMedico(),
-                detalle.idPaciente(),
-                detalle.fecha()));
+        return ResponseEntity.ok(detalleConsulta);
     }
 
     @DeleteMapping
