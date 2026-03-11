@@ -2,9 +2,9 @@
 ![Banner del Proyecto](./img/banner_vollmed.png)
 
 <p align="left">
-  <img src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white" />
-  <img src="https://img.shields.io/badge/Spring_Boot-6DB33F?style=for-the-badge&logo=spring-boot&logoColor=white" />
-  <img src="https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white" />
+  <img src="https://img.shields.io/badge/Java_17-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white" />
+  <img src="https://img.shields.io/badge/Spring_Boot_3.3.10-6DB33F?style=for-the-badge&logo=spring-boot&logoColor=white" />
+  <img src="https://img.shields.io/badge/PostgreSQL_17-316192?style=for-the-badge&logo=postgresql&logoColor=white" />
   <img src="https://img.shields.io/badge/Spring_Security-6DB33F?style=for-the-badge&logo=spring-security&logoColor=white" />
 </p>
 
@@ -12,7 +12,7 @@ Voll.med es una API REST robusta desarrollada en Java con Spring Boot, diseñada
 
 <h2>Funcionalidades Principales</h2>
 
-<200d> **Gestión de Médicos**
+**Gestión de Médicos**
 * CRUD Completo: Registro, listado paginado, actualización y exclusión lógica.
 * Soft Delete: Los médicos no se borran de la base de datos, se marcan como "inactivos" para mantener la integridad referencial.
 * Especialidades: Soporte para Ortopedia, Cardiología, Ginecología y Dermatología.
@@ -57,10 +57,11 @@ LIMIT 1
 ```
 
 <h2> Requisitos e Instalación</h2>
-Clonar el repositorio.
-Configurar las credenciales de PostgreSQL en src/main/resources/application.properties.
-Ejecutar la aplicación (Flyway creará las tablas automáticamente).
-Acceder a la documentación en /swagger-ui.html.
+- Clonar el repositorio.
+- Configurar las credenciales de PostgreSQL en src/main/resources/application.properties.
+- Ejecutar la aplicación (Flyway creará las tablas automáticamente).
+- Acceder a la documentación en /swagger-ui.html.
 
 Proyecto desarrollado como parte de la formación integral de los tres cursos de Spring Boot 3 en Alura Latam.
-Desarrollado por Miguel Ángel de la Cruz Lázaro
+
+<h2>Desarrollado por <strong>Miguel Ángel de la Cruz Lázaro</strong></h2>
