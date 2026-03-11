@@ -54,17 +54,13 @@ AND m.especialidad = :especialidad
 AND m.id NOT IN (SELECT c.medico.id FROM Consulta c WHERE c.fecha = :fecha)
 ORDER BY function('random') 
 LIMIT 1
+```
 
 <h2> Requisitos e Instalación</h2>
-
 Clonar el repositorio.
-
 Configurar las credenciales de PostgreSQL en src/main/resources/application.properties.
-
 Ejecutar la aplicación (Flyway creará las tablas automáticamente).
-
 Acceder a la documentación en /swagger-ui.html.
 
 Proyecto desarrollado como parte de la formación integral de los tres cursos de Spring Boot 3 en Alura Latam.
-
 Desarrollado por Miguel Ángel de la Cruz Lázaro
