@@ -50,16 +50,16 @@
 <li>Hibernate Validator (Validaciones de DTOs)</li>
 </ol>
 
-<h3> Estructura Destacada</h3>
+<h2> Estructura Destacada</h2>
 
-<h2>Tratamiento de Errores</h2>
+<h3>Tratamiento de Errores</h3>
 <p>
   El proyecto cuenta con un <strong>GestorDeErrores</strong> centralizado que utiliza <code>@RestControllerAdvice</code>. 
   Esto permite capturar excepciones como <strong>404 Not Found</strong>, <strong>400 Bad Request</strong> (validaciones de campos) 
   y errores de autenticación, devolviendo respuestas JSON claras y estandarizadas.
 </p>
 
-<h2>Consultas Avanzadas</h2>>
+<h2>Consultas Avanzadas</h2>
 <p>
   Se implementaron queries personalizadas en <strong>JPQL</strong> dentro de los Repositorios para lógica compleja, 
   como la selección aleatoria de médicos disponibles:
@@ -78,7 +78,7 @@ LIMIT 1
 
 <ol>
 <li>Clonar el repositorio.</li>
-<li>Configurar las credenciales de PostgreSQL en src/main/resources/application.properties.</li>
+<li>Configurar las credenciales de <strong>PostgreSQL</strong> en </code>src/main/resources/application.properties</code>.</li>
 <li>Ejecutar la aplicación (Flyway creará las tablas automáticamente).</li>
 <li>Acceder a la documentación en /swagger-ui.html.</li>
 </ol>
