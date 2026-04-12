@@ -17,7 +17,7 @@ Voll.med es una API REST robusta desarrollada en Java con Spring Boot, diseñada
 * **Especialidades:** Soporte para Ortopedia, Cardiología, Ginecología y Dermatología.
 
 ### Gestión de Pacientes
-* **Registro Detallado:** Manejo de datos personales y direcciones mediante objetos incrustados @Embedded.
+* **Registro Detallado:** Manejo de datos personales y direcciones mediante objetos incrustados `@Embedded`.
 * **Validaciones:** Uso de Bean Validation para asegurar que el email, documento y teléfono cumplan con los formatos correctos.
 
 ### Reserva de Consultas
@@ -26,7 +26,7 @@ Voll.med es una API REST robusta desarrollada en Java con Spring Boot, diseñada
 
 ### Seguridad y Autenticación
 * **Stateless Authentication:** Implementación de seguridad con Spring Security y JWT (JSON Web Tokens).
-* **Protección de Endpoints:** Uso de @SecurityRequirement para asegurar que solo usuarios autenticados accedan a la gestión médica.
+* **Protección de Endpoints:** Uso de `@SecurityRequirement` para asegurar que solo usuarios autenticados accedan a la gestión médica.
 
 ## Tecnologías Utilizadas
 
@@ -42,7 +42,7 @@ Voll.med es una API REST robusta desarrollada en Java con Spring Boot, diseñada
 ## Estructura Destacada
 
 ### Tratamiento de Errores
-El proyecto cuenta con un GestorDeErrores centralizado que utiliza @RestControllerAdvice. Esto permite capturar excepciones como 404 Not Found, 400 Bad Request (validaciones de campos) y errores de autenticación, devolviendo respuestas JSON claras y estandarizadas.
+El proyecto cuenta con un GestorDeErrores centralizado que utiliza `@RestControllerAdvice`. Esto permite capturar excepciones como 404 Not Found, 400 Bad Request (validaciones de campos) y errores de autenticación, devolviendo respuestas JSON claras y estandarizadas.
 
 ## Consultas Avanzadas
 Se implementaron queries personalizadas en JPQL dentro de los Repositorios para lógica compleja, como la selección aleatoria de médicos disponibles:
