@@ -17,10 +17,8 @@
 * **Especialidades:** Soporte para Ortopedia, Cardiología, Ginecología y Dermatología.
 
 ### Gestión de Pacientes
-* **Registro Detallado:** Manejo de datos personales y direcciones mediante objetos incrustados `@Embedded`.
 * **Validaciones:** Uso de Bean Validation para asegurar que el email, documento y teléfono cumplan con los formatos correctos.
 
-### Reserva de Consultas
 * **Agendamiento Inteligente:** Sistema que permite elegir un médico o asignar uno aleatoriamente según la especialidad y disponibilidad en la fecha solicitada.
 * **Cancelamiento:** Gestión de cancelaciones con registro de motivos.
 
@@ -66,3 +64,4 @@ Acceder a la documentación en /swagger-ui.html.
 Proyecto desarrollado como parte de la formación integral de los tres cursos de Spring Boot 3 en Alura Latam.
 
 Desarrollado por Miguel Ángel de la Cruz Lázaro
+
